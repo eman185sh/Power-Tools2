@@ -4,13 +4,14 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>f08a76f9-633e-4ee0-ad08-1dbf9feb9e9a</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Power_Tools.py</StartupFile>
+    <StartupFile>smtplib_app.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>Power-Tools</Name>
     <RootNamespace>Power-Tools</RootNamespace>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,7 +22,30 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Power_Tools.py" />
+    <Compile Include="colorama_app.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="faker_app.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="duckdb_app.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="playsound_app.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="smtplib_app.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env\">
+      <Id>env</Id>
+      <Version>3.13</Version>
+      <Description>env (Python 3.13 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
